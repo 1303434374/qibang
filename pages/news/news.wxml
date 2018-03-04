@@ -1,0 +1,43 @@
+<import src="/template/nav.wxml"  />
+<import src="/template/copyright.wxml"  />
+<import src="/template/title2.wxml"  />
+<import src="/template/tab1.wxml"  />
+<import src="/template/news.wxml"  />
+<import src="/template/more.wxml"  />
+<view class="container" hidden="{{show}}">
+    <template is="nav" data="{{...nav}}"></template>
+    <view class="page-container">
+        <template is="title2" data="{{title : '最新动态'}}"></template>
+        <template is="tab1" data="{{...tab}}"></template>
+        <view wx:for="{{news_page.content}}" wx:key="key" hidden="{{tab.state != 0}}">
+            <template is="news" data="{{...item}}"></template>
+        </view>
+        <view wx:for="{{news_website.content}}" wx:key="key" hidden="{{tab.state != 1}}">
+            <template is="news" data="{{...item}}"></template>
+        </view>
+        <view wx:for="{{news_look.content}}" wx:key="key" hidden="{{tab.state != 2}}">
+            <template is="news" data="{{...item}}"></template>
+        </view>
+        <view hidden="{{news_page.content.length < 8 || tab.state != 0}}">
+            <view hidden="{{news_page.max}}">
+                <template is="more" data="{{id:31}}"></template>
+            </view>
+            <view style="width:100%;height: 30rpx;" wx:if="{{news_page.max}}"></view>
+            <template is="copyright"></template>
+        </view>
+        <view hidden="{{news_website.content.length < 8 || tab.state != 1}}">
+            <view hidden="{{news_website.max}}">
+                <template is="more" data="{{id:21}}"></template>
+            </view>
+            <view style="width:100%;height: 30rpx;" wx:if="{{news_website.max}}"></view>
+            <template is="copyright"></template>
+        </view>
+        <view hidden="{{news_look.content.length < 8 || tab.state != 2}}">
+            <view hidden="{{news_look.max}}">
+                <template is="more" data="{{id:47}}"></template>
+            </view>
+            <view style="width:100%;height: 30rpx;" wx:if="{{news_look.max}}"></view>
+            <template is="copyright"></template>
+        </view>
+    </view>
+</view>

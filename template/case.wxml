@@ -1,0 +1,12 @@
+<template name="case">
+    <view class="case" catchtap="tap_case" data-id="{{id}}" data-typeid="{{typeid}}">
+        <image src="https://www.sz-qibang.com{{litpic ? litpic : '/uploads/160606/12-1606061F220635.jpg'}}" mode="widthFix"  />
+        <view class="case-footer">
+            <view class="footer-left">
+                <text class="title">{{title}}</text>
+                <text class="info" decode="{{true}}">{{typeid == 50 ? '品牌视觉设计&nbsp;&nbsp;|&nbsp;&nbsp;品牌升级' : typeid == 48 ? '移动平台开发&nbsp;&nbsp;|&nbsp;&nbsp;3C数码' : '网页视觉设计&nbsp;&nbsp;|&nbsp;&nbsp;移动平台开发'}}</text>
+            </view>
+            <image class="footer-right" src="/images/icon/case_arrow.png"  />
+        </view>
+    </view>
+</template>

@@ -1,0 +1,36 @@
+<import src="/template/nav.wxml"  />
+<import src="/template/copyright.wxml"  />
+<import src="/template/title2.wxml"  />
+<import src="/template/title1.wxml"  />
+<import src="/template/case.wxml"  />
+<import src="/wxParse/wxParse.wxml"/>
+<view class="container" hidden="{{show}}">
+    <template is="nav" data="{{...nav}}"></template>
+    <view class="page-container">
+        <template is="title2" data="{{title : '案例'}}"></template>
+        <view class="info-header">
+            <text class="summary">项目简介</text>
+            <view class="browse">
+                <image src="/images/icon/icon_browse.png" mode="widthFix"  />
+                <text>{{detail.click}}</text>
+            </view>
+        </view>
+        <view class="info-body">
+            <view class="info-content"><template is="wxParse" data="{{wxParseData:article.nodes}}"/></view>
+            <text class="info-crap">启邦互动为{{detail.title}}提供了设计方案。</text>
+            <text class="info-name">案例名称：{{detail.title}}</text>
+            <text class="info-type" decode="{{true}}">服务项目：{{detail.typeid == 50 ? '品牌视觉设计&nbsp;&nbsp;|&nbsp;&nbsp;品牌升级' : detail.typeid == 48 ? '移动平台开发&nbsp;&nbsp;|&nbsp;&nbsp;3C数码' : '网页视觉设计&nbsp;&nbsp;|&nbsp;&nbsp;移动平台开发'}}</text>
+            <image src="{{detail.image}}" mode="widthFix" catchtap="tap_image" wx:if="{{detail.typeid != 50}}" />
+            <view wx:for="{{detail.images}}" wx:key="key" wx:if="{{detail.typeid == 50}}">
+                <image src="{{item}}" mode="widthFix" style="width: 100%;" />
+            </view>
+        </view>
+        <view style="margin: 50rpx 0 20rpx;">
+            <template is="title1" data="{{title : '相关案例'}}"></template>
+        </view>
+        <block wx:for="{{caselist}}" wx:key="key">
+            <template is="case" data="{{...item}}"></template>
+        </block>
+    </view>
+    <template is="copyright"></template>
+</view>

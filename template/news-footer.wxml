@@ -1,0 +1,9 @@
+<template name="news-footer">
+    <view class="news-footer">
+        <text class="date">{{date}}</text>
+        <view class="browse">
+            <image src="/images/icon/icon_browse.png" mode="widthFix"  />
+            <text>{{click}}</text>
+        </view>
+    </view>
+</template>

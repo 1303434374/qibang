@@ -1,0 +1,16 @@
+<import src="/template/nav.wxml"  />
+<import src="/template/copyright.wxml"  />
+<import src="/template/title2.wxml"  />
+<import src="/template/tab1.wxml"  />
+<view class="container" hidden="{{show}}">
+    <template is="nav" data="{{...nav}}"></template>
+    <view class="page-container">
+        <template is="title2" data="{{title : '关于服务'}}"></template>
+        <template is="tab1" data="{{...tab}}"></template>
+        <view class="content">
+            <image src="{{service[tab.state].image.url}}" mode="widthFix"  />
+            <text>{{service[tab.state].text}}</text>
+        </view>
+    </view>
+    <template is="copyright"></template>
+</view>

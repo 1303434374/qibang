@@ -1,0 +1,20 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/service/service",
+        "pages/news/news",
+        "pages/about/about",
+        "pages/contact/contact",
+        "pages/case-detail/case-detail",
+        "pages/news-detail/news-detail"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "启邦互动",
+        "backgroundColor": "#eeeeee",
+        "backgroundTextStyle": "light",
+        "enablePullDownRefresh": false,
+        "onReachBottomDistance": 100
+    }
+}

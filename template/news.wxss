@@ -1,0 +1,25 @@
+@import "/template/news-footer.wxss";
+
+.news {
+    display: flex;
+    flex-direction: column;
+    margin: 30rpx 0;
+}
+
+.news .image {
+    width: 100%;
+    margin-bottom: 10rpx;
+    border-radius: 5px;
+}
+
+.news .title {
+    color: #484848;
+    font-size: 35rpx;
+    margin: 10rpx 0;
+}
+
+.news .info {
+    color: #b9b9b9;
+    font-size: 25rpx;
+    line-height: 40rpx;
+}

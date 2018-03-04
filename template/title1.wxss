@@ -1,0 +1,21 @@
+.title1 {
+    display: flex;
+    align-items: center;
+    height: 60rpx;
+}
+
+.title1 view {
+    width: 8rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+    background-color: #2d42aa;
+}
+
+.title1 text {
+    color: #46455f;
+    font-size: 40rpx;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+

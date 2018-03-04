@@ -1,0 +1,26 @@
+.tab1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100rpx;
+}
+
+.tab1 view {
+    flex: 1;
+    color: #afafaf;
+    font-size: 30rpx;
+    text-align: center;
+}
+
+.tab1 view:first-child {
+    border-right: 1px solid #afafaf;
+}
+
+.tab1 view:last-child {
+    border-left: 1px solid #afafaf;
+}
+
+.tab1 .tab1-active {
+    color: #4153b1;
+    font-weight: bold;
+}

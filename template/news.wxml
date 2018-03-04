@@ -1,0 +1,9 @@
+<import src="/template/news-footer.wxml"  />
+<template name="news">
+    <view class="news" catchtap="tap_news" data-id="{{id}}" data-typeid="{{typeid}}">
+        <image class="image" src="https://www.sz-qibang.com{{litpic ? litpic : '/uploads/160606/12-1606061F220635.jpg'}}" mode="widthFix"  />
+        <text class="title">{{title}}</text>
+        <text class="info">{{info ? info + '...' : '暂无描述'}}</text>
+        <template is="news-footer" data="{{click:click,date:date}}"></template>
+    </view>
+</template>

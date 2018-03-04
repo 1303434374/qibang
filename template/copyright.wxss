@@ -1,0 +1,10 @@
+.copyright-container {
+    width: calc(100% + 50rpx);
+    height: 40px;
+    color: #c0c0c0;
+    font-size: 25rpx;
+    text-align: center;
+    line-height: 40px;
+    margin-left: -25rpx;
+    background-color: #f8f8f8;
+}

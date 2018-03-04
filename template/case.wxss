@@ -1,0 +1,40 @@
+.case {
+    display: flex;
+    flex-direction: column;
+    margin: 30rpx 0;
+}
+
+.case image {
+    width: 100%;
+    margin-bottom: 10rpx;
+    border-radius: 5px;
+}
+
+.case .case-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.case-footer .footer-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.case-footer .footer-left .title {
+    color: #3e3e3e;
+    font-size: 30rpx;
+    font-weight: bold;
+    line-height: 50rpx;
+}
+
+.case-footer .footer-left .info {
+    color: #c0c0c0;
+    font-size: 30rpx;
+    line-height: 50rpx;
+}
+
+.case-footer .footer-right {
+    width: 45rpx;
+    height: 45rpx;
+}

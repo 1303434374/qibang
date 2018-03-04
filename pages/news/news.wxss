@@ -1,0 +1,15 @@
+@import "/template/nav.wxss";
+@import "/template/copyright.wxss";
+@import "/template/title2.wxss";
+@import "/template/tab1.wxss";
+@import "/template/news.wxss";
+@import "/template/more.wxss";
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    padding: 100rpx 25rpx 0;
+    box-sizing: border-box;
+    min-height: calc(100% - 40px);
+}
+

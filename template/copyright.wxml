@@ -1,0 +1,3 @@
+<template name="copyright">
+    <view class="copyright-container">COPRIGHT © 2018启邦互动 版权所有 粤ICP备13054229号-1</view>
+</template>

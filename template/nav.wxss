@@ -1,0 +1,127 @@
+.nav-container .logo-header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100rpx;
+    background-color: rgba(7, 19, 79, .5);
+    padding: 20rpx 25rpx;
+    box-sizing: border-box;
+}
+
+.logo-header .header-left {
+    width: 200rpx;
+    height: 60rpx;
+}
+
+.logo-header .header-right {
+    padding: 5rpx 0;
+}
+
+.logo-header .header-right .icon-tel {
+    width: 50rpx;
+    height: 50rpx;
+    padding: 0 40rpx;
+    border-right: 1px solid #fff;
+}
+ 
+.logo-header .header-right .icon-menu {
+    width: 50rpx;
+    height: 50rpx;
+    padding-left: 40rpx;
+}
+
+.nav-container .cancel-header {
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100rpx;
+    background-color: #ffffff;
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+
+.nav-container .cancel-header .icon-cancel {
+    float: right;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 8;
+    width: 100%;
+    height: 100%;
+    padding: 100rpx 75rpx 0rpx;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.menu-container .item {
+    height: 130rpx;
+    border-bottom: 1px solid #eeeeee;
+    color: #5f5f5f;
+    font-size: 35rpx;
+    line-height: 130rpx;
+}
+
+.menu-container .item:last-child {
+    display: flex;
+    border-bottom: none;
+}
+
+.menu-container .item:last-child {
+    width: calc(100% + 60rpx);
+    height: 150rpx;
+    margin-top: 20rpx;
+    margin-left: -30rpx;
+}
+
+.menu-container .item:last-child image {
+    width: 100%;
+}
+
+.menu-container.state-a {
+    top: -100%;
+}
+
+.menu-container.state-b {
+    top: 0;
+}
+
+.animation-state-a {
+    animation-name: animation-in;
+    animation-duration: .3s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+.animation-state-b {
+    animation-name: animation-out;
+    animation-duration: .3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animation-in {
+    from {
+        top: -100%;
+    }
+    to {
+        top: 0;
+    }
+}
+
+@keyframes animation-out {
+    from {
+        top: 0;
+    }
+    to {
+        top: -100%;
+    }
+}

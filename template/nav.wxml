@@ -1,0 +1,22 @@
+<template name="nav">
+    <view class="nav-container">
+        <view class="logo-header" wx:if="{{open <= 0}}">
+            <image class="header-left" src="/images/icon/header_logo.png" catchtap="tap_logo"  />
+            <view class="header-right">
+                <image class="icon-tel" src="/images/icon/header_tel.png" catchtap="tap_tel"  />
+                <image class="icon-menu" src="/images/icon/header_menu.png" catchtap="tap_menu"  />
+            </view>
+        </view>
+        <view class="cancel-header" wx:else>
+            <image class="icon-cancel" src="/images/icon/menu_cancel.png" catchtap="tap_cancel"  />
+        </view>
+        <view class="menu-container {{open == 1 ? 'animation-state-a state-b' : open == 0 ? 'animation-state-b state-a' : 'state-a'}}">
+            <view class="item" wx:for="{{['首页','案例','关于服务','最新动态','关于我们','联系我们']}}" wx:key="key" catchtap="tap_item" data-item="{{index}}">
+                <text style="{{index == page ? 'color: #556feb;' : ''}}">{{item}}</text>
+            </view>
+            <view class="item" catchtap="tap_tel">
+                <image src="/images/icon/button_contact.png" mode="widthFix"  />
+            </view>
+        </view>
+    </view>
+</template>

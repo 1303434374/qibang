@@ -1,0 +1,5 @@
+<template name="more">
+    <view class="more">
+        <image src="/images/icon/button_more.png" mode="widthFix" data-id="{{id}}" catchtap="tap_more"  />
+    </view>
+</template>

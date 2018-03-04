@@ -1,0 +1,28 @@
+@import "/template/nav.wxss";
+@import "/template/copyright.wxss";
+@import "/template/title2.wxss";
+@import "/template/tab1.wxss";
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    padding: 100rpx 25rpx 0;
+    box-sizing: border-box;
+    min-height: calc(100% - 40px);
+}
+
+.page-container .content {
+    margin-bottom: 50rpx;
+}
+
+.content image {
+    width: calc(100% + 50rpx);
+    margin-left: -25rpx;
+}
+
+.content text {
+    color: #919191;
+    font-size: 30rpx;
+    line-height: 50rpx;
+    letter-spacing: 2px;
+}

@@ -1,0 +1,6 @@
+<template name="title1">
+    <view class="title1">
+        <view></view>
+        <text>{{title}}</text>
+    </view>
+</template>

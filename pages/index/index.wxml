@@ -1,0 +1,129 @@
+<import src="/template/nav.wxml"  />
+<import src="/template/copyright.wxml"  />
+<import src="/template/title1.wxml"  />
+<import src="/template/tab1.wxml"  />
+<import src="/template/case.wxml"  />
+<import src="/template/title2.wxml"  />
+<import src="/template/more.wxml"  />
+<view class="container" hidden="{{show}}" style="overflow-x: visible;">
+    <template is="nav" data="{{...nav}}" wx:if="{{nav.page == 0}}"></template>
+    <template is="nav" data="{{...nav}}" wx:if="{{nav.page == 1}}"></template>
+    <view class="index-container" hidden="{{bar_state != 0}}" style="overflow-x: hidden;">
+        <swiper class="swiper-container" indicator-dots="true" autoplay="true" circular="true">
+            <block wx:for="{{swiper}}" wx:key="key">
+                <swiper-item>
+                    <image src="{{item.image.url}}"  />
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="qibang-container">
+            <text class="title">启邦，是一家专注于成长型品牌形象</text>
+            <text class="title">创新服务的设计公司</text>
+            <view class="line"></view>
+            <view class="info">
+            启邦互动是一家专业的网站建设公司，致力于为刚创业的公司及对网页视觉设计需要提升的企业提供网页建设，网站推广、品牌形象设计、网站搜索引擎优化(SEO)服务，启邦在网页设计和网站优化方面积累了丰富的经验，我们的宗旨就是为客户创造有价值的网站，启邦是很多注重网站视觉设计和SEO的企业客户的首选。
+            </view>
+        </view>
+        <view class="service-container">
+            <view style="padding-left: 25rpx;">
+                <template is="title1" data="{{title:'关于服务'}}"></template>
+            </view>
+            <view class="service">
+                <image class="service-left" src="http://www.sz-qibang.com/uploads/111111/service_0.png" mode="widthFix" data-id="0"
+                       catchtap="tap_service"  />
+                <view class="service-right">
+                    <image src="http://www.sz-qibang.com/uploads/111111/service_1.png" mode="widthFix" data-id="1" catchtap="tap_service"  />
+                    <image src="http://www.sz-qibang.com/uploads/111111/service_2.png" mode="widthFix" data-id="2" catchtap="tap_service"  />
+                </view>
+            </view>
+        </view>
+        <view class="case-container">
+            <template is="tab1" data="{{...tab}}"></template>
+            <view wx:for="{{website}}" wx:key="key" hidden="{{tab.state != 0}}">
+                <template is="case" data="{{...item}}"></template>
+            </view>
+            <view wx:for="{{logo}}" wx:key="key" hidden="{{tab.state != 1}}">
+                <template is="case" data="{{...item}}"></template>
+            </view>
+            <view wx:for="{{app}}" wx:key="key" hidden="{{tab.state != 2}}">
+                <template is="case" data="{{...item}}"></template>
+            </view>
+            <view class="button">
+                <image src="/images/icon/button_case.png" mode="widthFix" data-type="case" catchtap="tap_button"  />
+            </view>
+        </view>
+        <view class="news-container">
+            <template is="title1" data="{{title:'最新动态'}}"></template>
+            <view wx:for="{{news}}" wx:key="key" class="{{index == 0 ? 'first-news' : ''}}" catchtap="tap_news" data-id="{{item.id}}" data-typeid="{{item.typeid}}">
+                <view class="news-header">
+                    <text class="title">{{item.title}}</text>
+                    <text class="date">{{item.date}}</text>
+                </view>
+                <text wx:if="{{index == 0}}" class="info">{{item.info ? item.info + '...' : '暂无描述'}}</text>
+            </view>
+            <view class="button">
+                <image src="/images/icon/button_news.png" mode="widthFix" data-type="news" catchtap="tap_button"  />
+            </view>
+        </view>
+        <template is="copyright"></template>
+    </view>
+    <view class="page-container" hidden="{{bar_state != 1}}" style="overflow-x: hidden;">
+        <template is="title2" data="{{title:'案例'}}"></template>
+        <template is="tab1" data="{{...tab}}"></template>
+        <view wx:for="{{case_website.content}}" wx:key="key" hidden="{{tab.state != 0}}">
+            <template is="case" data="{{...item}}"></template>
+        </view>
+        <view wx:for="{{case_logo.content}}" wx:key="key" hidden="{{tab.state != 1}}">
+            <template is="case" data="{{...item}}"></template>
+        </view>
+        <view wx:for="{{case_app.content}}" wx:key="key" hidden="{{tab.state != 2}}">
+            <template is="case" data="{{...item}}"></template>
+        </view>
+        <view hidden="{{case_website.content.length < 9 || tab.state != 0}}">
+            <view hidden="{{case_website.max}}">
+                <template is="more" data="{{id:30}}"></template>
+            </view>
+            <view style="width:100%;height: 30rpx;" wx:if="{{case_website.max}}"></view>
+            <template is="copyright"></template>
+        </view>
+        <view hidden="{{case_logo.content.length < 9 || tab.state != 1}}">
+            <view hidden="{{case_logo.max}}">
+                <template is="more" data="{{id:50}}"></template>
+            </view>
+            <view style="width:100%;height: 30rpx;" wx:if="{{case_logo.max}}"></view>
+            <template is="copyright"></template>
+        </view>
+        <view hidden="{{case_app.content.length < 9 || tab.state != 2}}">
+            <view hidden="{{case_app.max}}">
+                <template is="more" data="{{id:48}}"></template>
+            </view>
+            <view style="width:100%;height: 30rpx;" wx:if="{{case_app.max}}"></view>
+            <template is="copyright"></template>
+        </view>
+    </view>
+    <view class="bar-container" hidden="{{bar_hide}}">
+        <view class="aui-hr"></view>
+        <view class="bar">
+            <view class="item" data-id="0" catchtap="tap_bar">
+                <image src="/images/tab/index{{bar_state == 0 ? '_hl' : ''}}.png" mode="widthFix"  />
+                <text style="{{bar_state == 0 ? 'color: #556feb;' : ''}}">首页</text>
+            </view>
+            <view class="item" data-id="1" catchtap="tap_bar">
+                <image src="/images/tab/case{{bar_state == 1 ? '_hl' : ''}}.png" mode="widthFix"  />
+                <text style="{{bar_state == 1 ? 'color: #556feb;' : ''}}">案例</text>
+            </view>
+            <view class="item" data-id="2" catchtap="tap_bar">
+                <image src="/images/tab/consult{{bar_state == 2 ? '_hl' : ''}}.png" mode="widthFix"  />
+                <text style="{{bar_state == 2 ? 'color: #556feb;' : ''}}">咨询</text>
+                <contact-button size="25" style="top:5px;left:27px;"></contact-button>
+                <contact-button size="25" style="top:5px;right:27px;"></contact-button>
+                <contact-button size="25" style="top:32px;left:27px;"></contact-button>
+                <contact-button size="25" style="top:32px;right:27px;"></contact-button>
+            </view>
+            <view class="item" data-id="3" catchtap="tap_bar">
+                <image src="/images/tab/contact{{bar_state == 3 ? '_hl' : ''}}.png" mode="widthFix"  />
+                <text style="{{bar_state == 3 ? 'color: #556feb;' : ''}}">联系</text>
+            </view>
+        </view>
+    </view>
+</view>

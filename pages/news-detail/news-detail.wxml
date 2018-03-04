@@ -1,0 +1,30 @@
+<import src="/template/nav.wxml"  />
+<import src="/template/copyright.wxml"  />
+<import src="/template/title2.wxml"  />
+<import src="/template/news-footer.wxml"  />
+<import src="/template/title1.wxml"  />
+<import src="/template/news.wxml"  />
+<import src="/wxParse/wxParse.wxml"/>
+<view class="container" hidden="{{show}}">
+    <template is="nav" data="{{...nav}}"></template>
+    <view class="page-container">
+        <template is="title2" data="{{title : '最新动态'}}"></template>
+        <text class="news-title">{{detail.title}}</text>
+        <view style="margin-bottom: 40rpx;">
+            <template is="news-footer" data="{{date:detail.date,click:detail.click}}"></template>
+        </view>
+        <view class="news-content">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+            <view wx:for="{{detail.images}}" wx:key="key">
+                <image src="{{item}}" mode="widthFix" style="width: 100%;" />
+            </view>
+        </view>
+        <view style="margin: 40rpx 0 20rpx;">
+            <template is="title1" data="{{title : '相关动态'}}"></template>
+        </view>
+        <block wx:for="{{newslist}}" wx:key="key">
+            <template is="news" data="{{...item}}"></template>
+        </block>
+    </view>
+    <template is="copyright"></template>
+</view>

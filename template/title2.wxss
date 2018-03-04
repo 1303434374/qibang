@@ -1,0 +1,21 @@
+.title2 {
+    display: flex;
+    flex-direction: column;
+    height: 60rpx;
+    margin: 50rpx 0;
+}
+
+.title2 text {
+    color: #4a4a4a;
+    font-size: 40rpx;
+    font-weight: bold;
+    line-height: 40rpx;
+}
+
+.title2 view {
+    width: 35rpx;
+    height: 5rpx;
+    margin-top: 15rpx;
+    margin-left: 1rpx;
+    background-color: #394bad;
+}

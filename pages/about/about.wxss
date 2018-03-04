@@ -1,0 +1,104 @@
+@import "/template/nav.wxss";
+@import "/template/copyright.wxss";
+@import "/template/title2.wxss";
+@import "/template/tab1.wxss";
+@import "/template/more.wxss";
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    padding: 100rpx 25rpx 0;
+    box-sizing: border-box;
+    min-height: calc(100% - 40px);
+}
+
+.info .info-header {
+    display: flex;
+    align-items: center;
+    height: 45rpx;
+    margin: 40rpx 0;
+}
+
+.info-header view {
+    width: 5rpx;
+    height: 34rpx;
+    margin-right: 15rpx;
+    background-color: #3342a8;
+}
+
+.info-header text {
+    color: #46455f;
+    font-size: 35rpx;
+    letter-spacing: 2px;
+}
+
+.info-container .info-body {
+    color: #8c8c8c;
+    font-size: 30rpx;
+    line-height: 40rpx;
+    padding-bottom: 50rpx;
+    border-bottom: 1px dotted #cccccc;
+}
+
+.info-container .info:last-child .info-body {
+    border-bottom: none;
+}
+
+.team-container .member {
+    margin-top: 50rpx;
+}
+
+.member image {
+    width: 100%;
+    margin-bottom: 20rpx;
+}
+
+.member .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info .name {
+    color: #494949;
+    font-size: 35rpx;
+    margin-bottom: 10rpx;
+}
+
+.info .job {
+    color: #9b9b9b;
+    font-size: 25rpx;
+    margin-bottom: 10rpx;
+}
+
+.info .line {
+    width: 30rpx;
+    height: 5rpx;
+    background-color: #3342a8;
+}
+
+.team-container .member:last-child {
+    margin-bottom: 50rpx;
+}
+
+.partner-container {
+    margin: 50rpx 0 0;
+}
+
+.partner {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 25rpx);
+}
+
+.partner view {
+    flex: 0 0 33.3%;
+    display: flex;
+    padding-right: 25rpx;
+    padding-bottom: 25rpx;
+    box-sizing: border-box;
+}
+
+.partner image {
+    width: 100%;
+}

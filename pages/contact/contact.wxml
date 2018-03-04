@@ -1,0 +1,37 @@
+<import src="/template/nav.wxml"  />
+<import src="/template/copyright.wxml"  />
+<import src="/template/title2.wxml"  />
+<view class="container" hidden="{{show}}">
+    <template is="nav" data="{{...nav}}"></template>
+    <view class="page-container">
+        <template is="title2" data="{{title : '联系我们'}}"></template>
+        <view class="company-title">
+            <text>启邦互动科技有限公司</text>
+            <text>QIBANG INTERACTIVE TECHNOLOGY CO. LTD.</text>
+        </view>
+        <view class="company-info">
+            <text>电话：0755 - 6193 1702</text>
+            <text>手机：137-2425-9054</text>
+            <text>邮箱：service@sz-qibang.com</text>
+            <text>邮编：518116</text>
+            <text>地址：深圳市龙岗区大芬美术馆附近</text>
+        </view>
+        <view class="demand">
+            <view class="demand-title">
+                <text>填写您的需求到以下表单</text>
+            </view>
+            <text class="demand-que"><text class="demand-sign">*</text>您的称呼</text>
+            <input maxlength="10" confirm-type="next" disabled="{{nav.open == 1}}" data-id="0" bindinput="input_value" />
+            <text class="demand-que"><text class="demand-sign">*</text>回访电话</text>
+            <input type="number" maxlength="11" confirm-type="next" disabled="{{nav.open == 1}}" data-id="1" bindinput="input_value" />
+            <text class="demand-que"><text class="demand-sign">*</text>QQ邮箱</text>
+            <input maxlength="20" confirm-type="next" disabled="{{nav.open == 1}}" data-id="2" bindinput="input_value" />
+            <text class="demand-que"><text class="demand-sign">*</text>填写需求</text>
+            <textarea maxlength="100" show-confirm-bar="{{false}}" disabled="{{nav.open == 1}}" data-id="3" bindinput="input_value"  />
+        </view>
+    </view>
+    <view class="button" catchtap="tap_button">
+        <image src="/images/icon/button_submit.png" mode="widthFix"  />
+    </view>
+    <template is="copyright"></template>
+</view>

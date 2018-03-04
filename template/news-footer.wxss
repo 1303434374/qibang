@@ -1,0 +1,26 @@
+.news-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20rpx;
+}
+
+.news-footer .date {
+    color: #b9b9b9;
+    font-size: 25rpx;
+}
+
+.news-footer .browse {
+    display: flex;
+    align-items: center;
+}
+
+.news-footer .browse image {
+    width: 35rpx;
+    margin-right: 10rpx;
+}
+
+.news-footer .browse text {
+    color: #afafaf;
+    font-size: 25rpx;
+}

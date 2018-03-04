@@ -1,0 +1,10 @@
+.more {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 50rpx 0;
+}
+
+.more image {
+    width: 400rpx;
+}
